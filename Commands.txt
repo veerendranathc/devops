@@ -1,0 +1,165 @@
+Commands
+23 : telnet port number
+➢ 22 : ssh/scp
+➢ 		 : To find hostname
+
+
+to all linux users
+
+cat /etc/sudero
+
+cat /etc/sudoeros.d
+
+systemctl status/stop/start firewalld
+firewall-cmd --list-all
+firewall-cmd --permanent --add-port=8080/tcp
+firewall-cmd --reload
+
+
+
+
+
+ 
+
+➢ uname -r : check kernel version
+➢ uname -m or arch : check given os is 32 bit or 64bit
+➢ cat /etc/redhat-release : check linux version
+➢ ping ipaddressorhostname : to check connectivity between two boxes
+➢ telnet hostname portnumber : to check port is opened or not in remote box
+➢ who : to find users logged in to the box
+➢ who -q : count number of users logged in
+➢ last reboot – to check reboot history or who -b
+➢ ifconfig : Check ipaddress
+➢ ifconfg -a : check nic cards are enabled or not
+➢ man command : It’s a help document how to use a command and its switches
+➢ & : give & at the end of the command to run a process in the back ground
+➢ fg: bring a process to foreground
+➢ cat>.f1.txt : create a hidden file f1.txt
+➢ cat /dev/null>sysout.txt : nullify a log file
+➢ ls -a : To find hidden file
+
+➢ ls -l : To find long list format
+➢ ls -lrt : To find recent modified files in reverse order
+➢ ls -lt : Display the files based on timestamp
+➢ df -h /apps/alfresco : free disk space
+➢ du -h : lists all files and their sizes in present directory and total directory size, to find disk a usage.
+➢ find -type f -exec du -sh {} + | sort -rh | head -n 5 : To find top 5 files based on the size
+➢ find . -user rama -type f -exec du -m {} \;|awk '{ s = s+$1 } END { print "Total used: ",s }': disk usage based on
+➢ user or du -sh ~username or du ~username
+➢ free -m : to find free memory or ram
+➢ chmod numericalnumber filename : read 4 write 2 exceute 1 : File permissions
+➢ chmod -R 755 directory : file permissions change to entire directory
+➢ useradd username : to add a user
+➢ passwd username : change password
+➢ chownnewownername filename : change Ownership to a file
+➢ chown -R newownername dirname : change ownership to directory
+2
+➢ chown :newgroupname filename : change groupname to a file
+➢ chown -R :newgroupname dirname : change groupname to a directory
+➢ sudo command : To execute with special user or admin user
+➢ su username : switch user to other user
+➢ sshusername@192.168.42.130 : switch to user account which is in remote box
+➢ mv oldfilenewfile : rename file or directory
+➢ rm filename : To delete a file
+➢ rm -r dirname: To delete a directory
+➢ tail -6 filename : To display the last 6 lines in a file
+-> tail -f to check runtime logs
+➢ head -6 filename : To display top 6 lines in a file
+➢ find /tmp -type f -name "*.txt" : find which ends with .txt
+➢ find /tmp -type f -name "krishna*" -print -exec rm {} \; find and delte files which starts with krishna
+➢ find /tmp -mtime +10 : search files modified older than 10 days
+➢ find /tmp -mtime +10 -exec rm -r {} \; : search files and dir’s modified older than 10 days and delete
+➢ find /tmp -type d -mtime +10 -exec rmdir {} \; find and delete dir’s older than 10 day
+➢ find /tmp -type f -name "*.txt" -mtime +50 : find which ends with .txt older than 50 day
+➢ find /tmp -type f -name "*.txt" -mtime +50 -exec rm {} \; find ends with .txt older than 50 days and delete
+➢ find /tmp -type f -name "*.txt" -mtime +50 -size +4M -exec rm {} \; find ends with .txt older than 50 days ,
+➢ size more than 4mb and delete
+➢ find /tmp -type f -empty : search empty files
+➢ find /tmp -type d -empty : search empty directories
+➢ find /tmp -type f -empty -exec rm {} \; search empty files and delete
+➢ find /tmp -user krishna : search the files owned by a particular user
+➢ grep “krishna” f1.txt : search a string krishna in file f1.txt
+➢ grep -r “krishna” /tmp : search a string in multiple file
+➢ find . -type f -print -exec sed -i 's/km_test/km_multi/g' {} \; find and replace in multiple files
+➢ sed ‘s/oldstring//g’ input.file>output.file delete a string in a file
+➢ sed -i ‘s/oldstring/newstring/g’ f1.txt : find and replace a string in f1.txt
+➢ sed -i ‘s/oldstring/newstring/g’ f1.txt f2.txt : find and replace a string in f1.txt and f2.txt
+➢ sftp remoteuser@192.168.42.129 (Remote IP) : connect to sftp
+➢ sftp> put localfile_f1.txt : upload from local to remote
+➢ sftp>mput *.txt : upload multiple files from local to remote
+➢ sftp>get f1.txt : download from remote to local
+➢ sftp>mget *.txt : download multiple files from remote to local host
+➢ runlevel : check runlevel
+➢ 0 : halt the system
+➢ 1 : single user mode
+➢ 2 : local multiuser with networking but without network service (like NFS)
+3
+➢ 3 : full multiuser with networking
+➢ 4 : not used
+➢ 5 : full multiuser with networking and X windows (GUI)
+➢ 6 : Reboot
+➢ wc -l filename – display number of lines in a file
+➢ nl filename or set number in vi : to set line numbers
+• (small o) Insert blank line next line to cursor
+• (capital O) insert blank line before the current line
+➢ ps -ef | grep server1 : to check server1 is running or not and get info about that server
+➢ ps -ef | grep http : check webserver is running or not
+➢ ps -ef | grep java : to check all running java processes are running or not and get info about that processes
+➢ ps -u username : command to check process running with a particular user
+➢ ps -auxf|sort -nr -k3|head -15 : command to find top 15 processes which consumes high cpu usage
+➢ ps -aux --sort -rss | head -15 : command to find top 15 processes which consumes high memory usage
+➢ pgrep java | wc -l : to count number of java process that are currently running
+➢ sshremotehost 'pgrep java' : command to check running process on remote host
+➢ ptree (in solaris) pstree (in linux) : check how each process is related to other process
+➢ pfiles : In solaris to see list of open files with pid, usage: pfilespid
+➢ lsof -i:portnumber : to find pid with a port number
+➢ netstat -antp | greppid ornetstat -nlp | greppid : To find port numbers with pid or pid with port number
+➢ netstat -plnt : to check listening ports
+➢ diff vscmp: diff is text comparison line by line but cmp is the byte comparison
+➢ export JAVA_HOME=/usr/java/jdk1.6/bin/java
+➢ export PATH=$PATH:/usr/java/jdk1.6/bin
+➢ awk: It will read the file and we can print specific rows and columns for easy understanding purpose
+➢ sar: monitor cpu usage
+➢ pkill java : pkill will kill all the processes matching to that string
+➢ pkill -u username : kill all process belongs to a particular user
+➢ killall: If too many instances for a particular process or too many child threads are there at that time we will
+➢ use killall, usage: killall -15 processname
+➢ kill -3 pid:To generate thread dumps
+➢ kill -9 pid: It’s a immediate kill / forcible kill
+➢ kill -15 pid: It will wait until all the child process are killed the parent process will be killed
+➢ rpm -ivhrpmfilename: install rpm file
+➢ tar -tvf filename.tar Display the tar files without extraction
+➢ tar -cvf filename.tar location where tar to be created Create tar file
+➢ tar -xvf filename.tar Extract tar file
+➢ tar -xzvf filename.tar Extract tar.gz file
+➢ zip filename.zip file1 file2 folder1 folder2 : zip the files
+➢ zipinfo -1 filename.zip : display zip file content
+4
+➢ unzip filename.zip : unzip a file
+➢ scp f1.tx username@remotehostname:/some/remotedir : copy files from local box to remote box
+➢ scpusrename@remotehostname:f1.txt /some/localdir : copy files from remote box to local box
+➢ scp -r dir1 username@remotehostname:/some/remote/dir2 : copy dir from local to remote
+➢ scp username@remotehost1:/file/to/send username@remotehost2:/where/to/put Copy from remote to
+➢ remote
+➢ nohup command & run the process even after logout from the shell prompt
+➢ find vs grep : find is used to search files and grep is used to search pattern (string) in files
+➢ echo $? To check last command executed successfully or not. If the output is 0 – success, non zero - failed
+➢ cat /proc/mounts check all mounted devices
+➢ mount -t type device destination_dir : Mount a device or filesystem
+➢ unmount /directory : unmount syntax
+➢ lsof -p pid : to check list of opened file with a specific process
+➢ lsof -u username : to check list of opened files with a specific user
+➢ grep "23/Jan/2013:06" example.com | cut -d[ -f2 | cut -d] -f1 | awk -F: '{print $2":"$3}' | sort -
+➢ nk1 -nk2 | uniq -c | awk '{ if ($1 > 10) print $0}' – Command to check number of requests
+
+------------------------------------------------------------------------------------------------
+this command is used to delete -- log , gz ,txt files last 30 days
+
+ find /var/log/tomcat \( -name "*.log" -o -name "*.gz" -o -name "*.txt" \) -mtime +30 -delete
+
+
+------------------------------------------------------------------------------------------------
+
+free -m -it shows memory stats in MB
+free -g -it shows memory stats in GB
+sar  -r -for all day memory stat
