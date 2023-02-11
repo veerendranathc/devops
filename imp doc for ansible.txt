@@ -1,0 +1,28 @@
+https://github.com/yankils/ansible_for_beginners  - github url
+
+https://docs.ansible.com/ansible/latest/user_guide/modules.html
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html
+https://www.ansible.com/blog/getting-started-writing-your-first-playbook
+
+https://github.com/yankils/ansible/blob/master/install_ansible_on_Amazon_linux.md
+https://abhijeet-kamble619.medium.com/10-things-you-should-start-using-in-your-ansible-playbook
+https://www.ktexperts.com/category/devops/ansible/
+
+
+Install python and python-pip
+
+yum install python
+yum install python-pip
+Install ansible using pip check for version
+
+pip install ansible
+
+Ansible adhoc commands:
+--------------------------
+*ping      ansible all -m ping
+*command   ansible all -m command -a "uptime"
+*stat      ansible all -m stat -a "path=/etc/hosts"
+*yum       ansible all -m yum  -a "name=git" -b
+*user      anisble all -m user -a "name = john" -b
+*setup     ansible all -m setup
+
